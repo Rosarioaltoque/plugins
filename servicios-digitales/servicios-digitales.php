@@ -40,7 +40,7 @@ wp_enqueue_script('media-upload');
 wp_enqueue_script('quicktags');
 wp_register_script('sd_dir_main_js',SDDIRCALLBACK.'/main.js');
 wp_enqueue_script("sd_dir_main_js"); // ???
-wp_enqueue_script('OpenLayers', '/wp-content/themes/rcd/js/OpenLayers.js');
+wp_enqueue_script('OpenLayers', get_template_directory_uri().'/OpenLayers.js');
 
 /*
 *  Set admin Messages

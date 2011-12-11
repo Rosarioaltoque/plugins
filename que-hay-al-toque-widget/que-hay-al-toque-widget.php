@@ -10,8 +10,8 @@ Version: 0.4
 add_action("widgets_init", array('Widget_Que_hay_al_toque', 'register'));
 add_action('init', 'my_enqueue_js_function');
 function my_enqueue_js_function(){
-	wp_enqueue_script('OpenLayers', '/wp-content/themes/rcd/js/OpenLayers.js');
-	wp_enqueue_script('RosarioAlToque', '/wp-content/themes/rcd/js/rosario-al-toque.js');
+	wp_enqueue_script('OpenLayers', get_template_directory_uri().'/OpenLayers.js');
+	wp_enqueue_script('RosarioAlToque', get_template_directory_uri().'/rosario-al-toque.js');
 }
 class Widget_Que_hay_al_toque extends WP_Widget {
 	function Widget_Que_hay_al_toque() {
