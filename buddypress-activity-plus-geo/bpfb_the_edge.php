@@ -26,7 +26,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 
 define ('BPFB_PLUGIN_SELF_DIRNAME', basename(dirname(__FILE__)), true);
-wp_enqueue_script('OpenLayers', get_template_directory_uri().'/OpenLayers.js');
+wp_enqueue_script('OpenLayers', get_template_directory_uri().'/js/OpenLayers.js');
 
 
 //Setup proper paths/URLs and load text domains
