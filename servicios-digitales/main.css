@@ -1,0 +1,114 @@
+/*
+*  Form Styles
+*/
+.servdig_form_text{
+	width:30%;
+	text-align:right;
+	vertical-align:top;
+	padding:3px 5px 0 0;
+	font-weight:bold;
+	font-size:9pt;
+}
+.servdig_form_input{
+	text-align:left;
+	vertical-align:top;
+	padding:2px 0 3px 0;
+	text-align:left;
+}
+.servdig_input_style, .servdig_input_text_area, .servdig_input_select, .servdig_image_url{ width:80%; }
+.servdig_input_text_area{ height:150px; }
+
+.servdig_notes, .servdig_notes_grey{ font-size:7pt; }
+.servdig_notes_grey{
+	color:#777777;
+	text-decoration:none;
+}
+
+.servdig_error,.servdig_error_box{ color:#FF0000; }
+.servdig_message{ color:#00CC00; }
+.servdig_error,.servdig_error_box,.servdig_message{
+	font-weight:bold;
+	font-size:8pt;
+}
+.servdig_error_box{
+	border:2px solid #FF0000;
+	padding:3px;
+}
+
+.servdig_floating_input{
+	float:left;
+	width:33.3%;
+}
+/*
+*  Directory Styles
+*/
+#servdig_directory h3{ padding:3px 5px 3px 5px; }
+#servdig_directory td{ padding:0 0 15px 0; }
+#servdig_directory p{
+	padding:0 0 2px 0;
+	margin:0;
+}
+
+.servdig_linked_title {
+	text-decoration:none;
+	color:#000000;
+}
+.sd_selected_image {
+    width: auto;
+    display: block;
+/*    float: right;*/
+    margin: 0;
+    padding: 0;
+}
+
+.sd_url_display {
+    width: 350px; 
+    background-color: #FFFFFF; 
+    padding: 3px; 
+    border: #c6d9e9 1px solid; 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 13px;
+}
+.mapa-alta-servicios {
+	width: 350px;
+	height: 350px;
+	border: 1px solid #ccc;
+	z-index: 1000000000000;
+}
+#TB_window{	
+	z-index: 10000 !important;
+}
+#rat-avatar-servicios {	
+	float: left;
+	width: 160px;
+	height:80px;
+}
+#servicios-pagination-abajo {	
+	margin:3px 0 3px 0;
+	padding:2px 0 2px 0;
+	border:1px solid black;
+	border-left:0;
+	border-right:0;
+}
+#servicios-pagination-arriba, #servicios-pagination{
+	padding:8px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCC;
+	background-color: #FFF;
+	color: #666;
+}
+#servicios-enlace-pagina {
+	cursor:pointer;
+}
+#servdig_messages {
+	display:inline;
+	margin-left: 15px;
+}
+#servdig_directory {
+}
+#servicios-resultados-busqueda{
+	padding:8px;
+	background-color: #FFF;
+	color: #666;
+}
