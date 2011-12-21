@@ -103,9 +103,9 @@ class Ultimos_Blogs_Widget extends WP_Widget {
       }
       echo '<div class="contenedor">'.'<div class="item-title"><a href="'.get_category_link($category->term_id).'" title="' . sprintf( __( "View all posts in %s" ), $category->name).'" '.'>'.$category->name. '</a></div>';
       echo '<div class="item-excer"><p>'.implode(' ', array_slice(explode(' ', $category->description), 0, 25)) .' [...]'   . '</p></div>';
-      echo '<div class="item-meta"><span class="usuarios_widget"><img src="/wp-content/themes/rcd/images/ico_entr_18.png" width="18" height="18" align="absmiddle" />  '. $category->count . ' entradas. </span>';
-	echo ' <span class="comuni_widget"><a href="https://www.facebook.com/sharer/sharer.php?u='.get_category_link($category->term_id).'" target="_blank"><img src="/wp-content/themes/rcd/images/social/16_bn_facebook.png" width="16" height="16" align="absmiddle" border="0" /></a> ';
-	echo ' <a href="https://twitter.com/share?original_referer='.get_category_link($category->term_id).'" target="_blank"><img src="/wp-content/themes/rcd/images/social/16_bn_twitter.png" width="16" height="16" align="absmiddle" border="0" /></a></span>';
+      echo '<div class="item-meta"><span class="usuarios_widget"><img src="'.get_template_directory_uri().'/images/ico_entr_18.png" width="18" height="18" align="absmiddle" />  '. $category->count . ' entradas. </span>';
+	echo ' <span class="comuni_widget"><a href="https://www.facebook.com/sharer/sharer.php?u='.get_category_link($category->term_id).'" target="_blank"><img src="'.get_template_directory_uri().'/images/social/16_bn_facebook.png" width="16" height="16" align="absmiddle" border="0" /></a> ';
+	echo ' <a href="https://twitter.com/share?original_referer='.get_category_link($category->term_id).'" target="_blank"><img src="'.get_template_directory_uri().'/images/social/16_bn_twitter.png" width="16" height="16" align="absmiddle" border="0" /></a></span>';
       echo '</div>';
       echo '</li>';
     }

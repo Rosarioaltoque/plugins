@@ -33,7 +33,7 @@ class Widget_Que_hay_al_toque extends WP_Widget {
 				<script>
 					var map = getMapaRosarioAlToque("mapaWidgetQueHayAlToque");
 						
-					var yelp = new OpenLayers.Icon("/wp-content/themes/rcd/images/marker-mapa-rosario-al-toque.png", new OpenLayers.Size(22,22));
+					var yelp = new OpenLayers.Icon("'.get_template_directory_uri().'/images/marker-mapa-rosario-al-toque.png", new OpenLayers.Size(22,22));
 					var newl = new OpenLayers.Layer.GeoRSS( "Rosario al toque", "/feed/", {"icon":yelp});
 					map.addLayer(newl);
 						

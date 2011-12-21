@@ -86,7 +86,6 @@
 
 .jcarousel-skin-destacados .jcarousel-next-horizontal {
   background-color: #E1E1E1;
-  background-image: url("/wp-content/themes/rcd/images/next-horizontal.png");
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -118,7 +117,6 @@
 	cursor: pointer;
 	background-color: #E1E1E1;
 	top: 0px;
-	background-image: url("/wp-content/themes/rcd/images/prev-horizontal.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 }

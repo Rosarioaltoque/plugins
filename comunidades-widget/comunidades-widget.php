@@ -83,10 +83,10 @@ class BP_Groups_Grafic_Widget extends WP_Widget {
             </div>
             <div class="item-meta">
               <span class="usuarios_widget">
-             <img src="/wp-content/themes/rcd/images/ico_user_18.png" width="9" height="18" align="absmiddle" />  <?php bp_group_member_count(); ?>
+             <img src="<?php echo get_template_directory_uri()?>/images/ico_user_18.png" width="9" height="18" align="absmiddle" />  <?php bp_group_member_count(); ?>
               </span>
-              <span class="comuni_widget"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php bp_group_permalink() ?>" target="_blank"><img src="/wp-content/themes/rcd/images/social/16_bn_facebook.png" width="16" height="16" border="0" align="absmiddle" /></a>
-	          <a href="https://twitter.com/share?original_referer=<?php bp_group_permalink() ?>" target="_blank"><img src="/wp-content/themes/rcd/images/social/16_bn_twitter.png" width="16" height="16" border="0" align="absmiddle" /></a></span>
+              <span class="comuni_widget"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php bp_group_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri()?>/images/social/16_bn_facebook.png" width="16" height="16" border="0" align="absmiddle" /></a>
+	          <a href="https://twitter.com/share?original_referer=<?php bp_group_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri()?>/images/social/16_bn_twitter.png" width="16" height="16" border="0" align="absmiddle" /></a></span>
             </div>
           </div>
         </li>

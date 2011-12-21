@@ -295,7 +295,7 @@ function cargaMapaAltaServicio() {
 							mapaAltaServicios.removeLayer(layerABorrar[0]);
 						}
 						var markerServicio = new OpenLayers.Layer.Markers( "Servicio" );
-						var icon = new OpenLayers.Icon("/wp-content/themes/rcd/images/marker-mapa-rosario-al-toque.png");
+						var icon = new OpenLayers.Icon(templateDirectoryUri + "/images/marker-mapa-rosario-al-toque.png");
 						markerServicio.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(lonlat.lon,lonlat.lat),icon));
 						mapaAltaServicios.addLayer(markerServicio);
 					}
@@ -319,7 +319,7 @@ function cargaMapaAltaServicio() {
 				click.activate();
 				if (document.getElementById('servdig_latitud') && document.getElementById('servdig_longitud') && document.getElementById('servdig_latitud').value * 1 != 0 && document.getElementById('servdig_latitud').value != '' && document.getElementById('servdig_longitud').value * 1 != 0 && document.getElementById('servdig_longitud').value != '') {
 					var markerServicio = new OpenLayers.Layer.Markers( "Servicio" );
-					var icon = new OpenLayers.Icon("/wp-content/themes/rcd/images/marker-mapa-rosario-al-toque.png");
+					var icon = new OpenLayers.Icon(templateDirectoryUri + "/images/marker-mapa-rosario-al-toque.png");
 					markerServicio.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(document.getElementById('servdig_longitud').value,document.getElementById('servdig_latitud').value),icon));
 					mapaAltaServicios.addLayer(markerServicio);
 					mapaAltaServicios.setCenter(new OpenLayers.LonLat(document.getElementById('servdig_longitud').value, document.getElementById('servdig_latitud').value), 17);
