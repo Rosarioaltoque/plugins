@@ -30,6 +30,11 @@ class Widget_Que_hay_al_toque extends WP_Widget {
 	    echo $args['before_title'] . $title . $args['after_title'];
 		echo	'
 				<div id="mapaWidgetQueHayAlToque"></div>
+				<div id="piemapaWidgetQueHayAlToque">
+					<a href="/rosario-ciudad-digital/rosario-al-toque/servicios/que-hay-al-toque/">
+						<img src="/wp-content/themes/rosarioaltoque/images/w_qhat_pie.png" align="absmiddle" />
+					</a>
+				</div>
 				<script>
 					var map = getMapaRosarioAlToque("mapaWidgetQueHayAlToque");
 						
