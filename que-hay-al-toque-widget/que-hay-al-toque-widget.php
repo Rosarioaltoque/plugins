@@ -29,6 +29,7 @@ class Widget_Que_hay_al_toque extends WP_Widget {
     	echo $args['before_widget'];
 	    echo $args['before_title'] . $title . $args['after_title'];
 		echo	'
+				<script>var arregloCapaMapa = eval(\'('.json_encode(getArregloCapaMapa()).')\')	</script>
 				<div id="mapaWidgetQueHayAlToque"></div>
 				<div id="piemapaWidgetQueHayAlToque">
 					<a href="/rosario-ciudad-digital/rosario-al-toque/servicios/que-hay-al-toque/">
@@ -37,11 +38,9 @@ class Widget_Que_hay_al_toque extends WP_Widget {
 				</div>
 				<script>
 					var map = getMapaRosarioAlToque("mapaWidgetQueHayAlToque");
-						
-					var yelp = new OpenLayers.Icon("'.get_template_directory_uri().'/images/marker-mapa-rosario-al-toque.png", new OpenLayers.Size(22,22));
-					var newl = new OpenLayers.Layer.GeoRSS( "Rosario al toque", "/feed/", {"icon":yelp});
-					map.addLayer(newl);
-						
+					jQuery.each(arregloCapaMapa, function() {
+						mostrarCapaChecked(this);
+					});
 					map.addControl(new OpenLayers.Control.LayerSwitcher());
 				</script>
 ';

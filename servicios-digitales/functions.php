@@ -237,7 +237,15 @@ function servdig_directory($searchTerms = "",$offset = 0,$category = 0) {
 		foreach($searchFeilds as $field)
 			$temp .= $wpdb->prepare(" OR $field LIKE %s",$searchTerms);
 		$temp .= ")";
-		$query .= str_replace(array(" '",' "')," '%",str_replace(array("' ",'" '),"%' ",$temp));
+//		$query .= str_replace(array(" '",' "')," '%",str_replace(array("' ",'" '),"%' ",$temp));
+//		echo "cadenas<br>";
+		$campos = "concat(l.name, ' ', l.company_name, ' ', l.company_description, ' ', l.company_street1)";
+		$cadenas = array();
+		$cadenas = split(" ", $searchTerms);
+		foreach($cadenas as $cadena) {
+//			echo $cadena."<br>";
+			$query .= " and ".$campos." like '%".$cadena."%' ";
+		}
 	}
 	if(!empty($category) && is_numeric($category)) {
 		$query .= $wpdb->prepare("AND c.category_id=%d ",$category);

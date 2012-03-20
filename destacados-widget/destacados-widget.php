@@ -136,6 +136,37 @@ function widget( $args, $instance ) {
 				echo '</div><!--#descripcion-->';
 				echo '</div><!--detalle-->';
 			}
+			echo '<script>'."\n";
+			echo 'var t;'."\n";
+			echo 'var timer_destacados_is_on=1;'."\n";
+			echo 'var destacado_actual = "";'."\n";
+			echo 'var arreglo_destacados = new Array(""';
+			$destacados = $wpdb->get_results($query,ARRAY_A);
+			foreach($destacados as $d) {
+				echo ', "wp_posts_'.@$d["id_registro"].'"';
+			}
+			$destacados = $wpdb->get_results($query,ARRAY_A);
+			foreach($destacados as $d) {
+				echo ', "wp_posts_'.@$d["id_registro"].'"';
+			}
+			echo ');'."\n";
+			echo 'function mover_a_proximo_destacado(){'."\n";
+			echo 'var encontrado = 0;'."\n";
+			echo 'for (i = 0; i < arreglo_destacados.length; i++) { '."\n";
+			echo 'if(arreglo_destacados[i] == destacado_actual){'."\n";
+			echo 'for (h = 0; h < arreglo_destacados.length; h++) { '."\n";
+			echo 'if(i > 0){';
+			echo 'jQuery("#" + arreglo_destacados[h]).css("display", "none");'."\n";
+			echo '}';
+			echo '}'."\n";
+			echo 'jQuery("#" + arreglo_destacados[i]).css("display", "inline-block");'."\n";
+			echo 'destacado_actual = arreglo_destacados[i+1]'."\n";
+			echo 't = setTimeout("mover_a_proximo_destacado()",4000);'."\n";
+			echo 'return;'."\n";
+			echo '}'."\n";
+			echo '}'."\n";
+			echo '}'."\n";
+			echo '</script>';
 		?>
 		</div><!--#marco-->
 
@@ -151,7 +182,7 @@ function widget( $args, $instance ) {
           		foreach($destacados as $d) {
           			$id_imagen = get_post_meta(@$d["id_registro"], '_thumbnail_id', true);
           			$image_attributes = wp_get_attachment_image_src( $id_imagen, 'Miniatura destacados' );
-          			echo '<li><div class="item-avatar"><a href="#wp_posts_'.@$d["id_registro"].'">';
+          			echo '<li><div class="item-avatar"><a href="#wp_posts_'.@$d["id_registro"].'" id="wp_posts_'.@$d["id_registro"].'">';
           			echo '<img width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" src="'.$image_attributes[0].'"/>';
           			echo '</a></div></li><!--#item-avatar-->';
           		}
@@ -162,6 +193,7 @@ function widget( $args, $instance ) {
 		<script type="text/javascript">
 			jQuery(document).ready(function() {
 				jQuery('#widget-destacados').jcarousel({scroll: 1});
+				mover_a_proximo_destacado();
 			});
 		</script>
 <?php
